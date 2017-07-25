@@ -9,8 +9,8 @@ object WordCount {
   def main(args: Array[String]): Unit = {
 
     val inpath = "src/main/resources/README"
-    val outpath = "out/wordcount_output"
-     val sc = new SparkContext("local", "WordCount")
+    val outpath = "hdfs://10.108.219.4:9000/hadoop/output"
+    val sc = new SparkContext("local[4]", "WordCount")
     try{
       val input = sc.textFile(inpath);
       val wc = input
