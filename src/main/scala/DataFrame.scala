@@ -67,6 +67,8 @@ object DataFrame {
 
     val shemaString = "name age"
 
+//    val fields = shemaString.split(" ")
+//      .map(fieldName => StructField(fieldName, StringType, nullable = true))
     val fields = shemaString.split(" ")
       .map(fieldName => StructField(fieldName, StringType, nullable = true))
 
@@ -81,9 +83,7 @@ object DataFrame {
 
     val results = spark.sql("select name from people")
 
-    results.map((at => "Name:" + at(0))).show()
-
-
+    results.map((at => "Name: " + at(0))).show()
   }
 
   case class Person(name:String, age:Long)
