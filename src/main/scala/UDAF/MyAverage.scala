@@ -1,6 +1,6 @@
 package UDAF
 
-import org.apache.spark.sql.Row
+import org.apache.spark.sql.{Row, SparkSession}
 import org.apache.spark.sql.expressions.{MutableAggregationBuffer, UserDefinedAggregateFunction}
 import org.apache.spark.sql.types._
 
@@ -31,7 +31,7 @@ object MyAverage extends UserDefinedAggregateFunction{
 
   override def merge(buffer1: MutableAggregationBuffer, buffer2: Row): Unit = {
     buffer1(0) = buffer1.getLong(0) + buffer2.getLong(0)
-    buffer2(0) = buffer2.getLong(1) + buffer2.getLong(1)
+    buffer1(1) = buffer1.getLong(1) + buffer2.getLong(1)
   }
 
   override def evaluate(buffer: Row): Double = {
@@ -39,6 +39,22 @@ object MyAverage extends UserDefinedAggregateFunction{
   }
 
 
+  def main(args: Array[String]): Unit = {
+
+    val ss = SparkSession
+      .builder()
+      .master("local[2]")
+      .appName("Spark SQL basic example")
+      .config("spark.some.config.option", "some-value")
+      .getOrCreate()
+
+    val df = ss.read.json("file/employee.json")
+    df.createOrReplaceTempView("employees")
+    df.show()
+
+    val result = ss.sql("select MyAverage(salary) as average_salary from employees")
+    result.show()
+  }
 }
 
 
