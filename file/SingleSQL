@@ -1,0 +1,225 @@
+{
+  "config": {
+    "sqlStatement": "select * from table_1",
+    "type": "QueryExec"
+  }, 
+  "inputs": [
+    {
+      "id": 1, 
+      "name": "table_1", 
+      "status": "READY", 
+      "valueFormat": "parquet", 
+      "valueType": "Table", 
+      "values": [
+        {
+          "elementType": "Table", 
+          "schema": [
+            {
+              "name": "t_1", 
+              "type": "String"
+            }, 
+            {
+              "name": "t_2", 
+              "type": "String"
+            }, 
+            {
+              "name": "t_3", 
+              "type": "String"
+            }, 
+            {
+              "name": "t_4", 
+              "type": "String"
+            }, 
+            {
+              "name": "t_5", 
+              "type": "String"
+            }, 
+            {
+              "name": "t_6", 
+              "type": "String"
+            }, 
+            {
+              "name": "t_7", 
+              "type": "String"
+            }, 
+            {
+              "name": "t_8", 
+              "type": "String"
+            }, 
+            {
+              "name": "t_9", 
+              "type": "String"
+            }, 
+            {
+              "name": "t_10", 
+              "type": "String"
+            }, 
+            {
+              "name": "t_11", 
+              "type": "String"
+            }, 
+            {
+              "name": "t_12", 
+              "type": "String"
+            }, 
+            {
+              "name": "t_13", 
+              "type": "String"
+            }, 
+            {
+              "name": "t_14", 
+              "type": "String"
+            }, 
+            {
+              "name": "t_15", 
+              "type": "String"
+            }, 
+            {
+              "name": "t_16", 
+              "type": "String"
+            }, 
+            {
+              "name": "t_17", 
+              "type": "String"
+            }, 
+            {
+              "name": "t_18", 
+              "type": "String"
+            }, 
+            {
+              "name": "t_19", 
+              "type": "String"
+            }, 
+            {
+              "name": "t_20", 
+              "type": "String"
+            }, 
+            {
+              "name": "t_21", 
+              "type": "String"
+            }
+          ], 
+          "url": "file:///Users/zhzy/IdeaProjects/prophet-ce/spark-domain/src/test/resources/data/sql/dl1"
+        }
+      ]
+    }, 
+    {
+      "id": 2, 
+      "name": "table_2", 
+      "status": "READY", 
+      "valueFormat": "parquet", 
+      "valueType": "Table", 
+      "values": [
+        {
+          "elementType": "Table", 
+          "schema": [
+            {
+              "name": "d_1", 
+              "type": "String"
+            }, 
+            {
+              "name": "d_2", 
+              "type": "String"
+            }, 
+            {
+              "name": "d_3", 
+              "type": "String"
+            }, 
+            {
+              "name": "d_4", 
+              "type": "String"
+            }, 
+            {
+              "name": "d_5", 
+              "type": "String"
+            }, 
+            {
+              "name": "d_6", 
+              "type": "String"
+            }, 
+            {
+              "name": "d_7", 
+              "type": "String"
+            }, 
+            {
+              "name": "d_8", 
+              "type": "String"
+            }, 
+            {
+              "name": "d_9", 
+              "type": "String"
+            }, 
+            {
+              "name": "d_10", 
+              "type": "String"
+            }, 
+            {
+              "name": "d_11", 
+              "type": "String"
+            }, 
+            {
+              "name": "d_12", 
+              "type": "String"
+            }, 
+            {
+              "name": "d_13", 
+              "type": "String"
+            }, 
+            {
+              "name": "d_14", 
+              "type": "String"
+            }, 
+            {
+              "name": "d_15", 
+              "type": "String"
+            }, 
+            {
+              "name": "d_16", 
+              "type": "String"
+            }, 
+            {
+              "name": "d_17", 
+              "type": "String"
+            }, 
+            {
+              "name": "d_18", 
+              "type": "String"
+            }, 
+            {
+              "name": "d_19", 
+              "type": "String"
+            }, 
+            {
+              "name": "d_20", 
+              "type": "String"
+            }, 
+            {
+              "name": "d_21", 
+              "type": "String"
+            }
+          ], 
+          "url": "file:///Users/zhzy/IdeaProjects/prophet-ce/spark-domain/src/test/resources/data/sql/dl2"
+        }
+      ]
+    }
+  ], 
+  "name": "QueryExec", 
+  "outputs": [
+    {
+      "metaPath": "file:///Users/zhzy/IdeaProjects/prophet-ce/spark-domain/src/test/resources/tmp/single_sql/meta", 
+      "path": "file:///Users/zhzy/IdeaProjects/prophet-ce/spark-domain/src/test/resources/tmp/single_sql/data", 
+      "slotObject": {
+        "id": 2, 
+        "status": "NOT_READY", 
+        "valueFormat": "parquet", 
+        "valueType": "Table", 
+        "values": [
+          {
+            "elementType": "Table", 
+            "format": "parquet"
+          }
+        ]
+      }
+    }
+  ]
+}

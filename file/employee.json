@@ -1,4 +1,17 @@
-{"name":"Michael", "salary": 3000}
-{"name":"Andy", "salary": 4500}
-{"name":"Justin", "salary": 3500}
-{"name":"Berta", "salary": 4000}
+{"name":"Michael", "salary": 3000, "time":7}
+{"name":"Andy", "salary": 4500, "time":7}
+{"name":"Justin", "salary": 3500, "time":7}
+{"name":"Berta", "salary": 4000, "time":7}
+{"name":"Michael", "salary": 4400, "time":5}
+{"name":"Michael", "salary": 3000, "time":4}
+{"name":"Michael", "salary": 6000, "time":3}
+{"name":"Andy", "salary": 9500, "time":5}
+{"name":"Andy", "salary": 2500, "time":4}
+{"name":"Andy", "salary": 4500, "time":3}
+{"name":"Justin", "salary": 7500, "time":5}
+{"name":"Justin", "salary": 3500, "time":4}
+{"name":"Justin", "salary": 5500, "time":3}
+{"name":"Berta", "salary": 2000, "time":3}
+{"name":"Berta", "salary": 4000, "time":4}
+{"name":"Berta", "salary": 4000, "time":5}
+{"name":"Berta", "salary": 6000, "time":6}

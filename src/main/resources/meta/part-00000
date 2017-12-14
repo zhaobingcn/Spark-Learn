@@ -1,0 +1,23 @@
+{
+  "url": null,
+  "resourceId": null,
+  "size": null,
+  "lineNum": 1,
+  "schema": [
+    {
+      "name": "_c0",
+      "type": "BigInt"
+    }
+  ],
+  "meta": null,
+  "previewId": null,
+  "id": null,
+  "createdTime": null,
+  "updatedTime": null,
+  "name": null,
+  "format": null,
+  "dagId": null,
+  "nodeId": null,
+  "userId": null,
+  "ownerId": null
+}

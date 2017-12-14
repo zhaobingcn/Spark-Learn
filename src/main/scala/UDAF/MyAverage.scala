@@ -4,7 +4,7 @@ import org.apache.spark.sql.{Row, SparkSession}
 import org.apache.spark.sql.expressions.{MutableAggregationBuffer, UserDefinedAggregateFunction}
 import org.apache.spark.sql.types._
 
-object MyAverage extends UserDefinedAggregateFunction{
+class MyAverage extends UserDefinedAggregateFunction{
 
 
   override def inputSchema: StructType = StructType(StructField("inputColumn", LongType) :: Nil)
@@ -37,7 +37,9 @@ object MyAverage extends UserDefinedAggregateFunction{
   override def evaluate(buffer: Row): Double = {
     buffer.getLong(0).toDouble / buffer.getLong(1)
   }
+}
 
+object MyAverage{
 
   def main(args: Array[String]): Unit = {
 
@@ -48,12 +50,26 @@ object MyAverage extends UserDefinedAggregateFunction{
       .config("spark.some.config.option", "some-value")
       .getOrCreate()
 
+    ss.udf.register("myAverage", new MyAverage)
+
     val df = ss.read.json("file/employee.json")
     df.createOrReplaceTempView("employees")
     df.show()
 
-    val result = ss.sql("select MyAverage(salary) as average_salary from employees")
-    result.show()
+    val schema = df.schema
+    val newschema = schema.add(StructField("average", DoubleType, true))
+
+    val result = ss.sql("select *,myAverage(salary) over (partition by name order by time rows between 4 preceding and current row) from employees")
+
+    val result2 = ss.sql("select *,myAverage(salary) over (partition by name order by time rows between 2 preceding and current row) as a from employees")
+
+    //    val result3 = ss.sql("")
+    result2.show()
+    //    println(newschema)
+    //    df.registerTempTable("t1")
+    //    ss.sql("create temporary function myAverage as 'MyAverage'")
+    //    val result = ss.sql("select myAverage(salary) as average_salary from t1")
+    //    result.show()
   }
 }
 
