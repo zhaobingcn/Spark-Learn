@@ -36,6 +36,7 @@ class MyAverage extends UserDefinedAggregateFunction{
 
   override def evaluate(buffer: Row): Double = {
     buffer.getLong(0).toDouble / buffer.getLong(1)
+//    x : Double => x+1
   }
 }
 
@@ -59,9 +60,9 @@ object MyAverage{
     val schema = df.schema
     val newschema = schema.add(StructField("average", DoubleType, true))
 
-    val result = ss.sql("select *,myAverage(salary) over (partition by name order by time rows between 4 preceding and current row) from employees")
+//    val result = ss.sql("select *,myAverage(salary) over (partition by name order by time rows between 4 preceding and current row) from employees")
 
-    val result2 = ss.sql("select *,myAverage(salary) over (partition by name order by time rows between 2 preceding and current row) as a from employees")
+    val result2 = ss.sql("select myAverage(salary) over (partition by name order by time rows between 2 preceding and 1 preceding) from employees")
 
     //    val result3 = ss.sql("")
     result2.show()
